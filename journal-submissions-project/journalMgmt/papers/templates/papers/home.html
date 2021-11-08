@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Home</title>
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="../../static/papers/myStyle.css"/>
+
+</head>
+
+<body>
+<header>
+
+    <li class="logo"><a href="/home/"> </a></li>
+
+</header>
+
+<nav>
+    <ul id="nav">
+        <li><a href="/publications/">publications</a></li>
+        <li><a href="/staff/">our staff</a></li>
+        <!--displays option to submit a paper only if user is in researcher group-->
+ {% if is_researcher %}
+            <li><a href="/researcher_account/">Your Account</a></li> {% endif %}
+        <!--displays option to load reviewer account only if user is in reviewer group-->
+        {% if is_reviewer %}
+            <li><a href="/reviewer_account/">Your Account</a></li> {% endif %}
+        <!--displays option to load editor account only if user is in editor group-->
+        {% if is_editor %}
+            <li><a href="/editor_account/">Your Account</a></li> {% endif %}
+        <li><a style="font-size: small; text-transform: none" href="/logout/">Sign Out</a></li>
+        </ul>
+    </nav>
+
+<section>a</section>
+
+<div>
+    {% csrf_token %}
+    {% if messages %}
+        {% for m in messages %}
+            <h3 style="color:green;"> {{ m }} </h3>
+        {% endfor %}
+    {% endif %}
+</div>
+</body>
+</html>

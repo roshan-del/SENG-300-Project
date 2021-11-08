@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Account</title>
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="../../static/papers/myStyle.css"/>
+
+</head>
+<body>
+<header>
+
+    <li class="logo"><a href="/home/"> </a></li>
+
+</header>
+
+
+<nav>
+    <ul id="nav">
+        <li><a href="/publications/">publications</a></li>
+        <li><a href="/staff/">our staff</a></li>
+        <!--displays option to submit a paper only if user is in researcher group-->
+        {% if is_researcher %}
+            <li><a href="/researcher_account/">Your Account</a></li> {% endif %}
+        <!--displays option to load reviewer account only if user is in reviewer group-->
+        {% if is_reviewer %}
+            <li><a href="/reviewer_account/">Your Account</a></li> {% endif %}
+        <!--displays option to load editor account only if user is in editor group-->
+        {% if is_editor %}
+            <li><a href="/editor_account/">Your Account</a></li> {% endif %}
+
+    </ul>
+
+</nav>
+
+
+<section>
+    <div class="content" style="color: #2067ff;">
+        <a style="font-size: small; text-transform: none" href="..">Back</a>
+    </div>
+</section>
+
+<div style="width: 15%">
+
+    <nav class="sidebar">
+        <ul id="sidebar">
+            <li class="list"><a href="/researcher_account/submit/">Submit Paper</a></li>
+            <li class="list"><a href="/researcher_account/submission_history/">My Papers</a></li>
+            <li class="list"><a style="font-size: small; text-transform: none" href="/logout/">Sign Out</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div style="width: 85%" class="account-info">
+    <div class="content">
+        <h1>Submission History</h1>
+        <p>Here you can view papers that you have submitted for review.<br>
+            To make changes or view more information about a paper, click on its title.</p>
+
+        {% for paper in user_papers %}
+            <ul>
+                <li class='list'><a href="/researcher_account/update_paper/{{ paper.id }}"><h2>{{ paper.paper_title }}</h2></a></li>
+                <li class="tab">Uploaded: {{ paper.upload_date }} <br>
+                    Publication: {{ paper.publication }} <br>
+                    Status: {{ paper.paper_status }}</li>
+
+                <li style="font-size: small" class="list tab">To download this paper, <a
+                        href="{{ paper.paper_file.url }}"
+                        download>click
+                    here!</a>
+                </li>
+
+
+            </ul>
+        {% endfor %}
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Journal Catalog</title>
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="../../static/papers/myStyle.css"/>
+
+</head>
+<body>
+<header>
+
+    <li class="logo"><a href="/home/"> </a></li>
+
+</header>
+
+
+<nav>
+    <ul id="nav">
+        <li><a href="/publications/">publications</a></li>
+        <li><a href="/staff/">our staff</a></li>
+        <!--displays option to submit a paper only if user is in researcher group-->
+        {% if is_researcher %}
+            <li><a href="/researcher_account/">Your Account</a></li> {% endif %}
+        <!--displays option to load reviewer account only if user is in reviewer group-->
+        {% if is_reviewer %}
+            <li><a href="/reviewer_account/">Your Account</a></li> {% endif %}
+        <!--displays option to load editor account only if user is in editor group-->
+        {% if is_editor %}
+            <li><a href="/editor_account/">Your Account</a></li> {% endif %}
+        <li><a style="font-size: small; text-transform: none" href="/logout/">Sign Out</a></li>
+    </ul>
+
+</nav>
+
+<section>
+    <div class="content" style="color: #2067ff;">
+        <a style="font-size: small; text-transform: none" href="..">Back</a>
+    </div></section>
+
+
+<div class="block">
+
+    <div class="content">
+
+        <h1> Academic Journal Publications</h1>
+
+
+        <li>
+            <a target="_blank" href="https://academicjournals.org/journal/JPP/article-abstract/B8089FE63247"><img
+                    alt="academic_journal"
+                    src="https://academicjournals.org/banners/journal1581422013_JPP.png"></a>
+        </li>
+        <li>
+            <a target="_blank" href="https://academicjournals.org/journal/IJVTE/article-abstract/6078FF560789"><img
+                    alt="academic_journal"
+                    src="https://academicjournals.org/banners/journal1557248374_IJVTE.png"></a>
+        </li>
+        <li>
+            <a target="_blank" href="https://academicjournals.org/journal/IJMMS/article-abstract/6A4E3C162609"><img
+                    alt="academic_journal"
+                    src="https://academicjournals.org/banners/journal1578490272_IJMMS.png"></a>
+        </li>
+        <li>
+            <a target="_blank" href="https://academicjournals.org/journal/AJPSIR/article-abstract/BA09C7462676"><img
+                    alt="academic_journal"
+                    src="https://academicjournals.org/banners/journal1579187979_AJPSIR.png"></a>
+        </li>
+        <li>
+            <a target="_blank" href="https://academicjournals.org/journal/ERR/article-abstract/018BA9F63356"><img
+                    alt="academic_journal"
+                    src="https://academicjournals.org/banners/journal1585674997_ERR.png"></a>
+        </li>
+        <li>
+            <a target="_blank" href="https://academicjournals.org/journal/JPESM/article-abstract/A3136F660988"><img
+                    alt="academic_journal"
+                    src="https://academicjournals.org/banners/journal1558627968_JPESM.png"></a>
+        </li>
+        <li>
+            <a target="_blank" href="https://academicjournals.org/journal/IJWREE/article-abstract/B56A46963273"><img
+                    alt="academic_journal"
+                    src="https://academicjournals.org/banners/journal1584546362_IJWREE.png"></a>
+        </li>
+        <li>
+            <a target="_blank" href="https://academicjournals.org/journal/AJOHS/article-abstract/72D7B2E61391"><img
+                    alt="academic_journal"
+                    src="https://academicjournals.org/banners/journal1562767325_AJOHS.png"></a>
+        </li>
+        <li>
+            <a target="_blank" href="https://academicjournals.org/journal/IJFA/article-abstract/75DE2C962747"><img
+                    alt="academic_journal"
+                    src="https://academicjournals.org/banners/journal1580379189_IJFA-FRONT%20COVER.png"></a>
+        </li>
+        <li>
+            <a target="_blank" href="https://academicjournals.org/journal/IJBMBR/article-abstract/45E102061767"><img
+                    alt="academic_journal"
+                    src="https://academicjournals.org/banners/journal1567001759_IJBMBR.png"></a>
+        </li>
+    </div>
+
+</div>
+
+
+<section>
+    <div class="content" style="color: #2067ff;">
+        <a style="font-size: small; text-transform: none" href="..">Back</a>
+    </div>Other info</section>
+
+<div class="block" style="width: 98%">
+    <h2> Other Academic Journal Databases </h2>
+    <div class="secondary-content">
+
+        <li>
+            <a target="_blank" href=" https://academicjournals.org/"><img
+                    alt="academic_journal"
+                    src="https://academicjournals.org/img/logo_2x.png"></a>
+        </li>
+        <li>
+            <a target="_blank" href="https://www.jstor.org/"><img
+                    alt="academic_journal"
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/JSTOR_vector_logo.svg/1200px-JSTOR_vector_logo.svg.png"></a>
+        </li>
+        <li><a target="_blank" href="https://academic.oup.com/journals"><img
+                alt="academic_journal"
+                src="https://library.ulab.edu.bd/wp-content/uploads/sites/7/2015/03/Logo-Oxford-Academic-Journals.jpg"></a>
+        </li>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+
+    <link rel="stylesheet" type="text/css" href="../../static/papers/myStyle.css">
+
+</head>
+
+<body style="text-align: match-parent;color:#ffffff;">
+
+<header>
+
+
+    <li class="logo"><a href=""> </a></li>
+
+</header>
+
+<h1>UBC Academic Journal Submission System</h1>
+
+<div>
+    <div class="login">
+        <b style="font-size: 22px">Login</b>
+
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="register">
+                {{ form.as_p }}
+            </div>
+                <input type="submit"/>
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>

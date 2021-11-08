@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Account</title>
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="../../static/papers/myStyle.css"/>
+
+</head>
+<body>
+<header>
+
+    <li class="logo"><a href="/home/"> </a></li>
+
+</header>
+
+
+<nav>
+    <ul id="nav">
+        <li><a href="/publications/">publications</a></li>
+        <li><a href="/staff/">our staff</a></li>
+        <!--displays option to load reviewer account only if user is in reviewer group-->
+        {% if is_reviewer %}
+            <li><a href="/reviewer_account/">Your Account</a></li> {% endif %}
+    </ul>
+
+</nav>
+
+<section>
+    <div class="content" style="color: #2067ff;">
+        <a style="font-size: small; text-transform: none" href="..">Back</a>
+    </div></section>
+
+<div style="width: 15%">
+
+    <nav class="sidebar">
+        <ul id="sidebar">
+            <li class="list"><a href="/reviewer_account/assigned_papers/">Available Papers</a></li>
+            <li class="list"><a style="font-size: small; text-transform: none" href="/logout/">Sign Out</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div style="width: 85%" class="account-info">
+    <div class="content">
+        <h1>Welcome {{ request.user.first_name }} {{ request.user.last_name }}</h1>
+        <p>Here you can see the papers you have been assigned. To work on a paper, click on its name.</p>
+        
+        <ul>
+            {% for p in papers %}
+                <ul>
+                        <li><a href="/reviewer_account/review_paper/{{ p.id }}">{{ p.paper_title }}</a></li>
+                        <p class="tab">Author: {{ p.paper_author.first_name }} {{ p.paper_author.last_name }}</p>
+                        <p class="tab">Publication: {{ p.publication }}</p>
+                        <p class="tab small">To download this paper, <a href="{{ p.paper_file.url }}">click
+                            here!</a>
+                        </p>
+
+                </ul>
+            {% endfor %}
+        </ul>
+
+
+    </div>
+</div>
+
+
+</body>
+</html>
+
+
+
